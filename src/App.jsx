@@ -1,13 +1,15 @@
-import './App.css'
+// import './App.css'
+
+import Header from "./Components/Header/Header"
 
 function App() {
 
   return (
-    <>
+    <div className="container mx-auto">
       
-      <h1>Flavor Fusion</h1>
+      <Header></Header>
       
-    </>
+    </div>
   )
 }
 
