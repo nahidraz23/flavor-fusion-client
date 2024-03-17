@@ -1,6 +1,6 @@
 import './Item.css'
 
-const Item = ({ item }) => {
+const Item = ({ item, handleWantToCook }) => {
     const { recipe_name, recipe_image, short_description, ingredients, preparing_time, calories } = item;
 
     return (
@@ -54,10 +54,10 @@ const Item = ({ item }) => {
             </div>
 
             <div>
-                <button className='btn rounded-full mt-6 bg-[#D8451D] text-white hover:text-[#D8451D]'>Want to Cook</button>
+                <button onClick={() => handleWantToCook(item)} className='btn rounded-full mt-6 bg-[#D8451D] text-white hover:text-[#D8451D]'>Want to Cook</button>
             </div>
         </div>
     );
 };
-
+ 
 export default Item;
