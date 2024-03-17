@@ -1,8 +1,16 @@
+import { useState } from "react";
 import CurrentCooks from "../CurrentCooks/CurrentCooks";
 import WantToCook from "../WantToCook/WantToCook";
 
 
 const WantToCooks = ({ cookings }) => {
+
+    const [cooks, setCooks] = useState([]);
+
+    const handleCurrentlyCooking = items => {
+        const newCooks = [...cooks, items];
+        setCooks(newCooks);
+    }
 
     return (
         <div>
@@ -22,13 +30,16 @@ const WantToCooks = ({ cookings }) => {
                         idx={idx}
                         key={cooking.recipe_id}
                         cooking={cooking}
+                        handleCurrentlyCooking={handleCurrentlyCooking}
                     ></WantToCook>)
                 }
             </div>
 
             {/* Currently Cooking section */}
             <div>
-                <CurrentCooks></CurrentCooks>
+                <CurrentCooks
+                    cooks={cooks}
+                ></CurrentCooks>
             </div>
 
         </div>

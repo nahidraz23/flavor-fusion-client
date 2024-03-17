@@ -3,6 +3,9 @@ import './Items.css'
 import { useEffect } from 'react';
 import Item from '../Item/Item';
 import WantToCooks from '../WantToCooks/WantToCooks';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Items = () => {
 
@@ -11,8 +14,26 @@ const Items = () => {
     const [cookings, setCookings] = useState([]);
 
     const handleWantToCook = food => {
-        const newFood = [...cookings, food];
-        setCookings(newFood);
+
+        const isExist = cookings.find(cook => cook.recipe_id === food.recipe_id);
+
+        if (!isExist) {
+            const newFood = [...cookings, food];
+            setCookings(newFood);
+        }
+        else {
+            toast('item already added', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+
     }
 
     useEffect(() => {
@@ -32,8 +53,8 @@ const Items = () => {
                     ></Item>)
                 }
             </div>
-            <div className='lg:w-1/3'>
-                <div className='border-2 p-5 rounded-2xl'>
+            <div className='lg:w-1/3 p-4 lg:p-0'>
+                <div className='border-2 lg:p-5 rounded-2xl'>
                     <div>
                         <WantToCooks
                             cookings={cookings}
@@ -42,6 +63,7 @@ const Items = () => {
                 </div>
             </div>
 
+            <ToastContainer />
         </div>
     );
 };

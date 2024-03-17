@@ -1,6 +1,7 @@
 import './Item.css'
 
 const Item = ({ item, handleWantToCook }) => {
+
     const { recipe_name, recipe_image, short_description, ingredients, preparing_time, calories } = item;
 
     return (
@@ -28,7 +29,6 @@ const Item = ({ item, handleWantToCook }) => {
                         }
                     </ul>
                 </div>
-
             </div>
 
             <hr className=' my-4 border-gray-300' />
