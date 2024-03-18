@@ -13,6 +13,16 @@ const Items = () => {
 
     const [cookings, setCookings] = useState([]);
 
+    const [cooks, setCooks] = useState([]);
+
+    const handleCurrentlyCooking = (foods, id) => {
+        const newCooks = [...cooks, foods];
+        setCookings(newCooks);
+
+        const remainingCooks = cookings.filter(cks => cks.id == id);
+        setCookings(remainingCooks);
+    }
+
     const handleWantToCook = food => {
 
         const isExist = cookings.find(cook => cook.recipe_id === food.recipe_id);
@@ -54,11 +64,15 @@ const Items = () => {
                 }
             </div>
             <div className='lg:w-1/3 p-4 lg:p-0'>
-                <div className='border-2 lg:p-5 rounded-2xl'>
-                    <div>
-                        <WantToCooks
-                            cookings={cookings}
-                        ></WantToCooks>
+                <div>
+                    <div className='border-2 lg:p-5 rounded-2xl'>
+                        <div>
+                            <WantToCooks
+                                cookings={cookings}
+                                handleCurrentlyCooking={handleCurrentlyCooking}
+                                cooks={cooks}
+                            ></WantToCooks>
+                        </div>
                     </div>
                 </div>
             </div>

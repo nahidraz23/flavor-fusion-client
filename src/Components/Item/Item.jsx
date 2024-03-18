@@ -21,7 +21,7 @@ const Item = ({ item, handleWantToCook }) => {
             <hr className=' my-4 border-gray-300' />
 
             <div className='text-left'>
-                <h1 className='text-lg font-lexend font-medium'>ingredients: {ingredients.length}</h1>
+                <h1 className='text-lg font-lexend font-medium'>Ingredients: {ingredients.length}</h1>
                 <div className='ml-8 mt-4'>
                     <ul className='list-disc font-fira-sans text-lg text-[#878787]'>
                         {

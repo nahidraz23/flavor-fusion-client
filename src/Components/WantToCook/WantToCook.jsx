@@ -1,7 +1,7 @@
 
 const WantToCook = ({ cooking, idx, handleCurrentlyCooking }) => {
 
-    const { recipe_name, preparing_time, calories } = cooking;
+    const {recipe_id, recipe_name, preparing_time, calories } = cooking;
 
     return (
         <div className="flex p-2">
@@ -10,7 +10,7 @@ const WantToCook = ({ cooking, idx, handleCurrentlyCooking }) => {
                 <p className="font-fira-sans text-[#878787] w-32 p-2 lg:p-0">{recipe_name}</p>
                 <p className="font-fira-sans text-[#878787] ">{preparing_time}</p>
                 <p className="font-fira-sans text-[#878787] w-14 text-center">{calories}</p>
-            <p className="btn rounded-full bg-[#D8451D] text-white hover:text-[#D8451D]"><button onClick={() => handleCurrentlyCooking(cooking)}>Preparing</button></p>
+            <p className="btn rounded-full bg-[#D8451D] text-white hover:text-[#D8451D]"><button onClick={() => handleCurrentlyCooking(cooking, recipe_id)}>Preparing</button></p>
             </div>
         </div>
     );
