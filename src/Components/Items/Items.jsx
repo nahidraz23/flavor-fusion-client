@@ -17,7 +17,7 @@ const Items = () => {
 
     const handleCurrentlyCooking = (foods, id) => {
         const newCooks = [...cooks, foods];
-        setCookings(newCooks);
+        setCooks(newCooks);
 
         const remainingCooks = cookings.filter(cks => cks.id == id);
         setCookings(remainingCooks);

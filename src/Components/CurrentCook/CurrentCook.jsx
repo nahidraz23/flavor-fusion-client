@@ -1,4 +1,4 @@
-const CurrentCook = ({cooks, idx}) => {
+const CurrentCook = ({ cooks, idx }) => {
 
     const { recipe_name, preparing_time, calories } = cooks;
 
@@ -10,7 +10,7 @@ const CurrentCook = ({cooks, idx}) => {
                     <p className="font-fira-sans text-[#878787] w-32">{recipe_name}</p>
                     <p className="font-fira-sans text-[#878787] ">{preparing_time}</p>
                     <p className="font-fira-sans text-[#878787] w-14 text-center">{calories}</p>
-                    </div>
+                </div>
             </div>
         </div>
     );

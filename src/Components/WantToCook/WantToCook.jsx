@@ -1,4 +1,3 @@
-
 const WantToCook = ({ cooking, idx, handleCurrentlyCooking }) => {
 
     const {recipe_id, recipe_name, preparing_time, calories } = cooking;

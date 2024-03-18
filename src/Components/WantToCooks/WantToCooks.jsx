@@ -1,21 +1,9 @@
-import { useState } from "react";
 import CurrentCooks from "../CurrentCooks/CurrentCooks";
 import WantToCook from "../WantToCook/WantToCook";
 
 
 const WantToCooks = ({ cookings, handleCurrentlyCooking, cooks }) => {
-
-    // const [cooks, setCooks] = useState([]);
-
-
-    // const handleCurrentlyCooking = (items, id) => {
-    //     const newCooks = [...cooks, items];
-    //     setCooks(newCooks);
-
-    //     console.log(id)
-    //     // console.log(newCooks)
-    // }
-
+    
     return (
         <div>
             <div className="border-b-2 mb-4">
